@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+var aa = 3
+var bb = "airvip"
+var cc = true
+
 func variableZeroValue()  {
 	var a int
 	var s string
