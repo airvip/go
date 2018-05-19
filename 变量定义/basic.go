@@ -1,10 +1,16 @@
-package main
+package 变量定义
 
 import "fmt"
 
-var aa = 3
+var aa = 0
 var bb = "airvip"
 var cc = true
+
+var (
+	name = "airvip"
+	age = 25
+	country = "china"
+)
 
 func variableZeroValue()  {
 	var a int
@@ -35,4 +41,5 @@ func main() {
 	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
+	fmt.Println(aa, bb, cc, name, age, country)
 }
