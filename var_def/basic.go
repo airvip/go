@@ -1,4 +1,4 @@
-package 变量定义
+package main
 
 import "fmt"
 
