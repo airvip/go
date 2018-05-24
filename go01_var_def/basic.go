@@ -65,6 +65,39 @@ func consts(){
 	fmt.Println(filename, c)
 }
 
+func enums()  {
+	const(
+		cpp = 0
+		java = 1
+		python = 2
+		golang = 3
+	)
+	fmt.Println(cpp, java, python, golang)
+}
+
+func enums1()  {
+	const(
+		cpp = iota
+        _
+		python
+		golang
+		javascript
+	)
+
+	// b, kb, mb, gb, tb, pb
+	const(
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+
+	fmt.Println(cpp, javascript, python, golang)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	fmt.Println("hello world")
 	variableZeroValue()
@@ -75,4 +108,7 @@ func main() {
 
 	euler()
 	triangle()
+	consts()
+	enums()
+	enums1()
 }
