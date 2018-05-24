@@ -57,6 +57,14 @@ func triangle()  {
 	fmt.Println(c)
 }
 
+func consts(){
+	const filename  = "abc.txt"
+	const a, b = 3, 4
+	var c int
+	c = int(math.Sqrt(a*a + b*b))
+	fmt.Println(filename, c)
+}
+
 func main() {
 	fmt.Println("hello world")
 	variableZeroValue()
