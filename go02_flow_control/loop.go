@@ -3,8 +3,11 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"os"
+	"bufio"
 )
 
+// for 初始值 条件 变化量
 func convertToBin(n int) string {
 	result := ""
 	if n > 0{
@@ -18,9 +21,34 @@ func convertToBin(n int) string {
 	return result
 }
 
+// 省略初始值，条件
+func printFile(filename string)  {
+	file, err := os.Open(filename)
+	if err != nil {
+		panic(err)
+	}
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+}
+
+// 省略初始值，条件，变化量
+func forever() {
+	for { // 死循环
+		fmt.Println("airvip")
+	}
+}
+
 func main() {
 	fmt.Println(
 		convertToBin(5),
 		convertToBin(0),
         convertToBin(13))
+
+	printFile("E:/phpStudy/WWW/go/go02_flow_control/abc.txt")
+
+	//forever()
 }
