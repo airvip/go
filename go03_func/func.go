@@ -44,6 +44,14 @@ func pow(a, b int) int {
 	return int(math.Pow(float64(a), float64(b)))
 }
 
+func sum(numbers ...int) int {
+    s := 0
+    for i := range numbers{
+    	s += numbers[i]
+	}
+	return s
+}
+
 func main() {
 	fmt.Println(eval(20, 5, "/"))
 	fmt.Println(div(13, 5))
@@ -57,4 +65,6 @@ func main() {
 			return int(math.Pow(
 				float64(a), float64(b)))
 		}, 3, 4))
+
+	fmt.Println(sum(1, 2, 3, 4, 5))
 }
