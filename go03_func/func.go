@@ -32,7 +32,7 @@ func div2(a, b int) (q, r int) {
 	return a / b, a % b
 }
 
-func apply(op func(int, int) int, a, b, int) int {
+func apply(op func(int, int) int, a, b int) int {
 	p := reflect.ValueOf(op).Pointer()
     opName := runtime.FuncForPC(p).Name()
 	fmt.Printf("Calling function %s with args" +
