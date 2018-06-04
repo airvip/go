@@ -8,11 +8,21 @@ type treeNode struct {
 }
 
 func (node treeNode) print() {
-	fmt.Print(node.value)
+	//fmt.Println(node.value)
+	fmt.Print(node.value, " ")
 }
 
 func (node *treeNode) setValue(value int) {
     node.value = value
+}
+
+func (node *treeNode) traverse() {
+	if node == nil{
+		return
+	}
+	node.left.traverse()
+	node.print()
+	node.right.traverse()
 }
 
 func createNode(value int) *treeNode {
@@ -29,12 +39,20 @@ func main() {
 	root.right = &treeNode{5, nil, nil}
 	root.right.left = new(treeNode)
 	root.left.right = createNode(2)
-
-    root.print()
-	fmt.Println()
 	root.right.left.setValue(4)
-	root.right.left.print()
-	fmt.Println()
+	root.traverse()
+
+	/*root.right.left.print()
+
+	root.print()
+	root.setValue(100)
+
+	pRoot := &root
+	pRoot.print()
+	pRoot.setValue(200)
+	pRoot.print()*/
+
+
 
 	/*nodes := []treeNode{
 		{value:3},
