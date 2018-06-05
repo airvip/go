@@ -16,13 +16,13 @@ func (node *TreeNode) SetValue(value int) {
 	node.Value = value
 }
 
-func (node *TreeNode) traverse() {
+func (node *TreeNode) Traverse() {
 	if node == nil{
 		return
 	}
-	node.Left.traverse()
+	node.Left.Traverse()
 	node.Print()
-	node.Right.traverse()
+	node.Right.Traverse()
 }
 
 func CreateNode(value int) *TreeNode {

@@ -1,15 +1,17 @@
 package main
 
+import "go/tree"
+
 func main() {
 	var root tree.TreeNode
 
 
-	root = treeNode{value:3}
-	root.left = &treeNode{}
-	root.right = &treeNode{5, nil, nil}
-	root.right.left = new(treeNode)
-	root.left.right = createNode(2)
-	root.right.left.setValue(4)
-	root.traverse()
+	root = tree.TreeNode{Value:3}
+	root.Left = &tree.TreeNode{}
+	root.Right = &tree.TreeNode{5, nil, nil}
+	root.Right.Left = new(tree.TreeNode)
+	root.Left.Right = tree.CreateNode(2)
+	root.Right.Left.SetValue(4)
+	root.Traverse()
 
 }
