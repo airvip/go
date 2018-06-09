@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go/retriever/mock"
 	"go/retriever/real"
+	"time"
 )
 
 type Retriever interface {
@@ -51,12 +52,12 @@ func main() {
 	fmt.Printf("%T %v\n", r, r)
 	inspect(r)
 
-	/*r = &real.Retriever{
+	r = &real.Retriever{
 		UserAgent: "Mozilla/5.0",
 		TimeOut: time.Minute,
 	}
 	fmt.Printf("%T %v\n", r, r)
-	inspect(r)*/
+	inspect(r)
 
 	// Type assertion name
 	//realRetriever := r.(*real.Retriever)
@@ -74,10 +75,14 @@ func main() {
 }
 
 func inspect(r Retriever)  {
+	fmt.Println("Inspecting", r)
+	fmt.Printf(" > %T %v\n", r, r)
+	fmt.Print(" > Type switch:")
 	switch v := r.(type) {
 	case *mock.Retriever:
 		fmt.Println("Contents:", v.Contents)
 	case *real.Retriever:
 		fmt.Println("UserAgent:",v.UserAgent)
 	}
+	fmt.Println()
 }
