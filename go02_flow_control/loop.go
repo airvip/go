@@ -5,6 +5,8 @@ import (
 	"strconv"
 	"os"
 	"bufio"
+	"io"
+	"strings"
 )
 
 // for 初始值 条件 变化量
@@ -28,7 +30,17 @@ func printFile(filename string)  {
 		panic(err)
 	}
 
-	scanner := bufio.NewScanner(file)
+	/*scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}*/
+
+	printFileContents(file)
+}
+
+func printFileContents(reader io.Reader)  {
+	scanner := bufio.NewScanner(reader)
 
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
@@ -48,7 +60,14 @@ func main() {
 		convertToBin(0),
         convertToBin(13))
 
-	printFile("E:/phpStudy/WWW/go/go02_flow_control/abc.txt")
+	printFile("E:/phpStudy/WWW/go/src/go/go02_flow_control/abc.txt")
 
+	s := `abc"d"
+    kkk
+    123
+    
+    airivp`
+
+    printFileContents(strings.NewReader(s))
 	//forever()
 }
